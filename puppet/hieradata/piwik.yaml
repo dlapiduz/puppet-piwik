@@ -1,0 +1,6 @@
+---
+classes:
+  - apache
+  - mysql::server
+
+mysql::bindings::php_enable: true
