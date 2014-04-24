@@ -1,6 +1,8 @@
 ---
 classes:
-  - apache
   - mysql::server
+  - piwik
+  - piwik::setup
 
 mysql::bindings::php_enable: true
+mysql::server::root_password: 'very_secret'

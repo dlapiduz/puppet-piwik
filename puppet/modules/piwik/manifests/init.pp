@@ -1,6 +1,6 @@
 class piwik(
     $path        = "/www/",
-    $user        = "www-data",
+    $user        = "apache",
 ) {
     file { $path:
         ensure => "directory",
@@ -14,18 +14,11 @@ class piwik(
     }->
     exec { "unpackage":
         path => "/bin:/usr/bin",
-        creates => "/",
+        creates => "/www/piwik/index.php",
         command => "bash -c 'tar xfz /tmp/latest.tar.gz -C ${$path}'",
         user => $user,
     }->
     file { "/tmp/latest.tar.gz":
         ensure => absent,
     }
-
-    php::ini { '/etc/php.ini':
-        display_errors => 'On',
-        memory_limit   => '256M',
-    }
-    php::mod_php5 {}
-    php::module { [ 'mysql', 'mcrypt', 'gd' ]: }
 }
