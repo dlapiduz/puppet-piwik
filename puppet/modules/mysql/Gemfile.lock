@@ -37,7 +37,7 @@ GEM
     formatador (0.2.4)
     highline (1.6.20)
     inifile (2.0.2)
-    json (1.8.1)
+    json (2.3.1)
     kwalify (0.7.2)
     lockfile (2.1.0)
     metaclass (0.0.1)
@@ -117,7 +117,7 @@ DEPENDENCIES
   beaker
   mime-types (< 2.0)
   pry
-  puppet (~> 2.7.0)
+  puppet
   puppet-lint
   puppetlabs_spec_helper
   rake
